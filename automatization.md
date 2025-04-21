@@ -86,6 +86,24 @@
     * _Ideal para:_ Equipos que usan GitLab como plataforma central, organizaciones que buscan una solución integral (potencialmente auto-hospedada).
     * _Investigar:_ Auto DevOps, integración con Kubernetes (GitLab Agent), Parent-child pipelines.
 
+### CircleCI
+
+* **Descripción:** Plataforma CI/CD principalmente basada en la nube, conocida por su velocidad, flexibilidad y enfoque en la experiencia del desarrollador. Utiliza archivos YAML (`.circleci/config.yml`) para la configuración.
+* **Características Clave (2025):**
+    * **Rendimiento:** A menudo destacada por su rapidez en la ejecución de builds y tests, con optimizaciones como paralelismo, división de tests y caché avanzada.
+    * **Orbs:** Paquetes reutilizables de configuración CircleCI que simplifican tareas complejas e integraciones (similar a las Actions de GitHub). Existe un registro público de Orbs.
+    * **Amplio Soporte de Plataformas:** Ejecución de jobs en Docker, Linux (varias imágenes), macOS, Windows y arquitecturas ARM (runners en la nube o auto-hospedados).
+    * **Workflows:** Permiten orquestar pipelines complejos con dependencias, ejecuciones secuenciales o paralelas.
+    * **Debugging:** Facilita la depuración de jobs fallidos permitiendo el acceso vía SSH directamente al entorno de ejecución.
+    * **Insights:** Panel de control para analizar el rendimiento del pipeline, identificar cuellos de botella y optimizar tiempos.
+    * **Runners Auto-hospedados:** Opción para ejecutar jobs en tu propia infraestructura.
+    * **Seguridad:** Gestión de secretos, soporte para OIDC, integraciones para escaneo de vulnerabilidades (a menudo a través de Orbs).
+* **Pros:** Rendimiento y velocidad, configuración potente y reutilizable (Orbs), buenas capacidades de debugging (SSH), soporte multi-plataforma y multi-arquitectura, buena documentación.
+* **Contras:** Puede volverse costoso a escala (precios basados en uso, concurrencia y clases de recursos), la configuración YAML puede ser compleja para pipelines muy elaborados, menos integrado con la gestión de código fuente comparado con GitHub Actions o GitLab CI si no usas esas plataformas.
+* **[Mis Notas sobre CircleCI:]**
+    * _Ideal para:_ Equipos que priorizan la velocidad de build/test, necesitan flexibilidad en sistemas operativos/arquitecturas, valoran las opciones de debugging y buscan optimizar el rendimiento del pipeline. Popular en startups y empresas tecnológicas.
+    * _Investigar:_ CircleCI Orbs (cómo usarlos y crearlos), estrategias avanzadas de caché (`save_cache`, `restore_cache`), configuración de paralelismo, el dashboard de Insights, configuración de runners auto-hospedados (self-hosted runners).
+
 ### Jenkins
 
 * **Descripción:** Servidor de automatización open-source, el "clásico" de CI/CD. Muy maduro y extensible.
